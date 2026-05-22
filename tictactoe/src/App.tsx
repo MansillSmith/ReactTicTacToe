@@ -1,15 +1,9 @@
-import BoardRow from './BoardRow'
+import Board from './Board'
 import './styles.css'
 
 function App() {
-
     return (
-        <>
-            <BoardRow/>
-            <BoardRow/>
-            <BoardRow/>
-        </>
-
+        <Board/>
     )
 }
 
