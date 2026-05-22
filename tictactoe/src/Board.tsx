@@ -1,7 +1,7 @@
-import { useState } from "react";
 import BoardRow from "./BoardRow";
+import type { BoardSquares } from "./Types";
 
-export default function Board({xIsNext, squares, onPlay}) {
+export default function Board({xIsNext, squares, onPlay}: {xIsNext: boolean, squares: BoardSquares, onPlay: (nextSquares: BoardSquares) => void}) {
     const winner = calculateWinner(squares);
     let status;
     if (winner) {
@@ -33,22 +33,22 @@ export default function Board({xIsNext, squares, onPlay}) {
     )
 }
 
-function calculateWinner(squares: Array<string | null>): string | null {
-  const lines = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-  ];
-  for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+function calculateWinner(squares: BoardSquares): string | null {
+    const lines = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+    for (let i = 0; i < lines.length; i++) {
+        const [a, b, c] = lines[i];
+        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+            return squares[a];
+        }
     }
-  }
-  return null;
+    return null;
 }

@@ -1,11 +1,6 @@
-import { useState } from "react";
+import type { SquareValue } from "./Types";
 
-export function Square({value, onSquareClick}) {
-    // const [value, setValue] = useState<string>("");
-
-    // function handleClick() {
-    //     setValue('X');
-    // }
+export function Square({value, onSquareClick}: {value: SquareValue, onSquareClick: () => void}) {
 
     return <button className="square" onClick={onSquareClick}>
         {value}
