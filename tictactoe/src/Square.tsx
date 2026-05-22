@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-export function Square() {
-    const [value, setValue] = useState<string>("");
+export function Square({value, onSquareClick}) {
+    // const [value, setValue] = useState<string>("");
 
-    function handleClick() {
-        setValue('X');
-    }
+    // function handleClick() {
+    //     setValue('X');
+    // }
 
-    return <button className="square" onClick={handleClick}>
+    return <button className="square" onClick={onSquareClick}>
         {value}
     </button>;
 }
