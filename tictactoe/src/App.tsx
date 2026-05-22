@@ -1,9 +1,9 @@
-import Board from './Board'
+import Game from './Game'
 import './styles.css'
 
 function App() {
     return (
-        <Board/>
+        <Game />
     )
 }
 
